@@ -1,0 +1,20 @@
+import passport from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import { keys } from "../config";
+
+export const initializePassport = () => {
+  passport.use(
+    new GoogleStrategy(
+      {
+        clientID: keys.googleClientID,
+        clientSecret: keys.googleClientSecret,
+        callbackURL: "/auth/google/callback",
+      },
+      (accessToken, refreshToken, profile, done) => {
+        console.log("Access Token:", accessToken);
+        console.log("Refresh Token:", refreshToken);
+        console.log("Profile:", profile);
+      }
+    )
+  );
+};
