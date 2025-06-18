@@ -18,11 +18,15 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.1.0"
+    "@types/passport": "^1.0.17",
+    "express": "^5.1.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
     "@types/express": "^5.0.3",
+    "@types/passport-google-oauth20": "^2.0.16",
     "eslint": "^9.29.0",
     "globals": "^16.2.0",
     "nodemon": "^3.1.10",
