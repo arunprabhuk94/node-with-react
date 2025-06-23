@@ -23,6 +23,7 @@ export const initializePassport = () => {
         clientID: env.googleClientID,
         clientSecret: env.googleClientSecret,
         callbackURL: "/auth/google/callback",
+        proxy: true,
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
