@@ -6,7 +6,7 @@ import cookieSession from "cookie-session";
 import passport from "passport";
 import { initializePassport } from "./services";
 
-mongoose.connect(env.MongoURI);
+mongoose.connect(env.mongoURI);
 initializePassport();
 
 const app = express();
@@ -14,7 +14,7 @@ const app = express();
 app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000, keys: [env.cookieKey] }));
 app.use(passport.session());
 
-authRoutes(app);
+app.use("/", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
