@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { AppThunk } from "../store";
 import { type IUser } from "../../../../models";
-import { getUser } from "../api";
+import { getUser } from "../../api";
 
 export interface AuthState {
   user: IUser | null | false;
@@ -24,7 +24,7 @@ export const authSlice = createSlice({
       const isLoading = state.user === null;
       const isNotLoggedIn = state.user === false;
       const isLoggedIn = !isLoading && !isNotLoggedIn;
-      return { isLoading, isNotLoggedIn, isLoggedIn };
+      return { isLoading, isNotLoggedIn, isLoggedIn, user: state.user };
     },
   },
 });

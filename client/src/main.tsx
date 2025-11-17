@@ -3,6 +3,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import "materialize-css/dist/css/materialize.min.css";
+import "./main.css";
 
 import { App } from "./components";
 import { store } from "./redux";

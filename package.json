@@ -9,11 +9,14 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
+    "serve-build": "dotenvx run -- nodemon dist/index.js",
     "server": "dotenvx run -- nodemon index.ts",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm run dev --prefix ./client",
-    "dev": "concurrently 'npm run server' 'npm run client'"
+    "dev": "concurrently 'npm run server' 'npm run client'",
+    "build-client": "npm install && npm run build --prefix ./client",
+    "build": "npm install && npx tsc && npm run build-client"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +28,9 @@
     "express": "^5.1.0",
     "mongoose": "^8.16.0",
     "passport": "^0.5.3",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "prop-types": "^15.8.1",
+    "stripe": "^18.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

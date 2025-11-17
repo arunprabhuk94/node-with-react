@@ -22,10 +22,10 @@ export const initializePassport = () => {
       {
         clientID: env.googleClientID,
         clientSecret: env.googleClientSecret,
-        callbackURL: "/auth/google/callback",
+        callbackURL: "/api/auth/google/callback",
         proxy: true,
       },
-      async (accessToken, refreshToken, profile, done) => {
+      async (__, _, profile, done) => {
         try {
           const existingUser = await User.findOne({ googleId: profile.id });
           if (existingUser) return done(null, existingUser);

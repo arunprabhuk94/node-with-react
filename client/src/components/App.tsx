@@ -15,9 +15,9 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div>
-        <Header />
+    <div>
+      <Header />
+      <div className="container">
         <Routes>
           <Route index element={<Landing />} />
           <Route path="surveys" element={<Dashboard />} />
