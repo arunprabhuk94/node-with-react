@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm run dev --prefix ./client",
     "dev": "concurrently 'npm run server' 'npm run client'",
-    "build-client": "npm install && npm run build --prefix ./client",
+    "build-client": "npm install --prefix ./client && npm run build --prefix ./client",
     "build": "npm install && npx tsc && npm run build-client"
   },
   "keywords": [],
